@@ -1,0 +1,14 @@
+a, a:active, a:visited{
+	color: #4c90a5;
+}
+
+.nav{
+
+	list-style: none;
+	
+}
+.nav .nav-item{
+	display: inline;
+
+	
+}
