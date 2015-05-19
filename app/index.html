@@ -4,18 +4,41 @@
     <meta charset="UTF-8">
     <base href="/">
     <title>Open Weather Map App</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<ul class='nav'>
-	  <li class='nav-item'><a href="#/cities/San Francisco">San Francisco</a>  |  </li>
-    <li class='nav-item'><a href="#/cities/Oakland">Oakland</a>  |  </li>
-    <li class='nav-item'><a href="#/cities/Arcata">Arcata</a></li>
-    <li class='nav-item'><a href="#/cities/nono">nono</a></li>
-  </ul>
-    <div ng-view></div>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Open Weather Map</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#/cities/San Francisco">San Francisco</a></li>
+            <li><a href="#/cities/Oakland">Oakland</a></li>
+            <li><a href="#/cities/Arcata">Arcata</a></li>
+                        <li><a href="#/cities/nono">nono</a></li>
+
+          </ul>
+        </div><!--/.nav-collapse class="active"-->
+      </div>
+    </nav>
+
+<div class='container'>
+  <div ng-view></div>
+</div>
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-    <script type="text/javascript" src="owm-app.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="owmApp.js"></script>
 </body>
 </html>

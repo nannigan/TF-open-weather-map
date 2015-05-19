@@ -2,13 +2,21 @@ a, a:active, a:visited{
 	color: #4c90a5;
 }
 
+body{
+    margin-top:50px;
+}
+/* bootstrap thing */
+.nav, .pagination, .carousel, .panel-title a {
+ cursor: pointer;
+ }
+
 .nav{
 
 	list-style: none;
-	
+
 }
 .nav .nav-item{
 	display: inline;
 
-	
+
 }
