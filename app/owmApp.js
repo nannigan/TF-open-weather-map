@@ -1,4 +1,4 @@
-angular.module('OWMApp', ['ngRoute', 'ui.bootstrap'])
+angular.module('OWMApp', ['ngRoute', 'ui.bootstrap','ngAnimate'])
 .value('owmCities', ['San Francisco', 'Oakland', 'Arcata'])
 .config(['$routeProvider', function($routeProvider)
     {
@@ -34,13 +34,19 @@ angular.module('OWMApp', ['ngRoute', 'ui.bootstrap'])
 
     }])
 // includes more possible exception scenarios than otherwise
-    .run(function($rootScope, $location)
-    {
-        $rootScope.$on('$routeChangeError', function()
-        {
-            $location.path('/error');
-        });
-    })
+.run(function($rootScope, $location, $timeout) {
+    $rootScope.$on('$routeChangeError', function() {
+        $location.path("/error");
+    });
+    $rootScope.$on('$routeChangeStart', function() {
+        $rootScope.isLoading = true;
+    });
+    $rootScope.$on('$routeChangeSuccess', function() {
+      $timeout(function() {
+        $rootScope.isLoading = false;
+      }, 50);// 5000 so I can enjoy my ani
+    });
+})
 
     .controller('HomeCtrl', function()
     {
